@@ -65,14 +65,14 @@ else
      		which curl > /dev/null
         	if [ $? = 1 ];
         	then
-                	sudo apt-get install curl -y
+                	pkg install curl -y
         	else
         	        sleep 1
         	fi
         	which jq > /dev/null
         	if [ $? = 1 ];
         	then
-                	sudo apt-get install jq -y
+                	pkg install jq -y
         	else
                 	sleep 1
         	fi
