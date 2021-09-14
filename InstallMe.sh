@@ -9,7 +9,7 @@ link="\e[4;32m" #GREEB-LINK
 ########### check packages ###########
 op=$(uname -o)
 if [ $op = "GNU/Linux" ]; #install pkg in Linux
-then
+        which ruby > /dev/null;[ $? -eq 1 ] && sudo apt-get install figlet -y;sudo apt-get install ruby -y ; gem install lolcat|| sleep 1
 	which python3 > /dev/null
 	if [ $? -eq 1 ];
 	then
@@ -47,7 +47,8 @@ then
 	fi
 else
 	if [ $op = "Android" ];  # install pkg in Termux
-	then
+	then 
+                which ruby > /dev/null;[ $? -eq 1 ] && pkg install figlet;pkg install ruby -y ; gem install lolcat|| sleep 1
 		which python > /dev/null
 		if [ $? = 1 ]
 		then
@@ -98,7 +99,8 @@ else
 fi
 
 ###################### starting logo###############
-python3 .logo.py
+clear
+figlet CodeBlack | lolcat
 sleep 2
 ###################### starting server ###############
 netstat -nlt | grep 5555 > /dev/null
